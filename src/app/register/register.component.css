@@ -1,0 +1,19 @@
+.for{
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    text-align: right;
+    margin: auto;
+    width: max-content;
+    margin-top: 200px;
+    border: 5px solid rgb(12, 12, 12);
+    border-radius: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 5px 5px 5px 5px ;
+    /* display: flex; */
+}
+h2{
+    text-align: center;
+}
+button{
+    margin-left: 20px;
+}

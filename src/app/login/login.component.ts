@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -14,20 +16,28 @@ export class LoginComponent implements OnInit {
 acno=''
 
 pass=''
-  userDetails:any={
-    1000:{acno:1000,username:"amal",password:123,balance:10000},
-    1001:{acno:1001,username:"anu",password:123,balance:20000},
-    1002:{acno:1002,username:"joyal",password:123,balance:150000},
-    1003:{acno:1003,username:"anaga",password:123,balance:100000},
-  }
 
-  constructor() { }
+  constructor(private router:Router,private ds:DataService) { }  //  access  specifier can be set to public and private    if we dont set it  it will be  public   (if we set private ( private router:Router) )
 
   ngOnInit(): void {
   }
-// login(){
-//   var acno=this.acno
-//   var pass=this.pass
+login(){
+  var acno=this.acno
+  var pass=this.pass
+const result=this.ds.login(acno,pass)
+if(result){
+  alert('login success')
+  this.router.navigateByUrl('dashboard')
+}
+}
+
+// login(a:any,b:any){
+//   console.log(a.value);
+//   console.log(b.value);
+  
+  
+//   var acno=a.value
+//   var pass=b.value
 //   let userDetails=this.userDetails
 //   if(acno in userDetails){
 //     if(pass==userDetails[acno]['password']){
@@ -42,31 +52,15 @@ pass=''
 //   alert('user not exist or incurrent ac number')
 // }
 // }
-login(a:any,b:any){
-  console.log(a.value);
-  console.log(b.value);
-  
-  
-  var acno=a.value
-  var pass=b.value
-  let userDetails=this.userDetails
-  if(acno in userDetails){
-    if(pass==userDetails[acno]['password']){
-      alert('login success')
-    }
-    else{
-      alert('incorrect password')
-    }
-
-  }
-  else{
-  alert('user not exist or incurrent ac number')
-}
-}
 acnoChange(event:any){
   this.acno=event.target.value
-}
-passwordchange(event:any){
-  this.pass=event.target.value
-}
+  console.log(this.acno);
+  
+ }
+ passchange(event:any){
+   this.pass=event.target.value
+   console.log(this.pass)
+
+ }
+
 }

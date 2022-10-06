@@ -1,0 +1,23 @@
+<!-- Table -->
+
+<!--structural Directive /*ngFor/  can apply directly in html to access datas from array-->
+
+<!-- Transaction history -->
+
+<br>
+<br>
+<br>
+<br>
+<table border="5px" class="center">
+    <h2>Transaction History</h2>
+    <tr>
+        <th>Type</th>
+        <th>Amount</th>
+    </tr>
+    <tr *ngFor="let i of transaction">
+        <td>{{i.type}}</td>
+        <td>{{i.amount}}</td>
+    </tr>
+    
+        <button  type="button" (click)="home()">home</button>
+</table>
