@@ -1,0 +1,66 @@
+
+
+
+
+                             html to ts 
+
+                         view to componenet
+
+        1. one by binding(one way binding)
+       1.1 componenet to view
+      1.1.1 string interpolation {{}} 
+      1.1.2 property binding [proprty]="value"
+
+
+       1.1. 2 view to componenet
+      1. 2.2 event binding (event name)="functionname()"
+      1.2.3  event binding using $ event  (event name)="funtionname($event)"
+1.2.4 event binding using template rendering variable   #variable_name
+
+
+
+2. two way binding
+
+2.1 ngModule - FormModule
+
+                                 Redirection in Ts
+
+method = navigateByUrl --- (class)= Router       
+
+Dependency Injection ---  to use an class inside an class  ( data sharing b\w two dependent class)
+
+
+                                   Angular SErvices 
+
+    To store redent  database(redent   means  duplicate)
+
+    ng g s (service name)
+
+
+
+    validation inputs
+
+
+
+    angular form validation
+
+    1. template driven form
+
+    2. model driven form
+       2.1  Reactive form
+        - form  group
+        - array 
+        - controller 
+        
+
+
+
+node module  install cheyyan  (npm  i)   if u clone some one angular project it dosent have node module so we need to install node module
+
+-------------------------------------------------------------------
+
+To create  httprequest
+
+import http client module
+
+class name HttpClient

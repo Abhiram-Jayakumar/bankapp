@@ -1,0 +1,25 @@
+<div><h3>{{aim}}</h3></div>
+<form (ngSubmit)="login()" action="" class="login1" [formGroup]="loginForm">
+    <h2>Sign in</h2>
+    <div class="input-icons">
+        <i class="fa-solid fa-envelope-open" id="pas"></i>
+        <input name="accont" class="input-field" type="text" [placeholder]="acnt" formControlName="acno" id="acno">
+        <br><br>
+        <div *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched" class="text-danger">
+            <p>invalid account number</p>
+        </div>
+    
+        <i class="fa-solid fa-lock" id="pas"></i>
+        <input name="password" class="input-field" type="password" placeholder="Password" formControlName="pass" id="pass" ><i class="bi bi-eye-slash"
+        id="pasi"></i>
+        <br><br>
+        <div *ngIf="this.loginForm.get('pass')?.errors&&this.loginForm.get('pass')?.touched" class="text-danger">
+            <p>invalid password</p>
+        </div>
+    
+        <button type="submit">Sign in</button>
+        <br>
+        <br>
+        <p>Don't have an account ? <a href="" routerLink="register" id="link" class="text-info">CREATE</a></p>
+    </div>
+</form>

@@ -1,0 +1,73 @@
+<div class="text-white" id="date"><h3>system date and time{{sDEtails | date :'short'}}</h3></div>
+<div class="">
+    <h1 class="text-white">Welcome {{user}}!!</h1>
+</div>
+<a routerLink="/transaction">Transaction History</a>
+<div class="text-end mt-3 p-5 me-3"> <button class="btn btn-outline-secondary" (click)="logout()">logout</button>
+</div>
+<div class="text-end mt-3 p-5 me-3"> <button class="btn btn-outline-danger" (click)="deleteconfirm()">delete</button>
+</div>
+<app-delete-confirm (onCancel)="oncancel()" [item]="acno"></app-delete-confirm>
+
+<form [ngClass]="acno?'style1':''" (ngSubmit)="deposit()" class="for" [formGroup]="depositForm">
+    <h2>Deposit</h2>
+    <div>
+        <label for="accountnumber">Account Number</label>
+        <input name="accountnumber" type="text" placeholder="Enter Accountnumber" id="acno" formControlName="acnum" >
+    </div>
+    <br>
+    <div *ngIf="this.dashbordForm.get('acnum')?.errors&&this.dashbordForm.get('acnum')?.touched" class="text-danger">
+        <p>invalid account number</p>
+    </div>
+    <div><label for="Pass">Password</label>
+        <input name="password" type="password" placeholder="Password" formControlName="pswrd" id="psw" >
+    </div>
+    <br>
+    <div *ngIf="this.dashbordForm.get('pswrd')?.errors&&this.dashbordForm.get('pswrd')?.touched" class="text-danger">
+        <p>invalid password</p>
+    </div>
+    <div>
+        <label for="Amount">Deposit-Amount</label>
+        <input name="Amount" type="text" formControlName="amnt" id="amt" placeholder="Deposit Amount" >
+    </div>
+    <br>
+    <div *ngIf="this.dashbordForm.get('amnt')?.errors&&this.dashbordForm.get('amnt')?.touched" class="text-danger">
+        <p>invalid deposit amount</p>
+    </div>
+    <button  type="submit" >Deposit</button>
+</form>
+
+<br>
+
+<form action="" (ngSubmit)="withdraw()" class="for" [formGroup]="depositForm">
+    <h2>withdraw</h2>
+    <div>
+        <label for="accountnumber">Account Number</label>
+        <input name="accountnumber" type="text" placeholder="Enter Accountnumber" id="acno1" formControlName="acnum1" >
+    </div>
+    <br>
+    <div *ngIf="this.dashbordForm.get('acnum1')?.errors&&this.dashbordForm.get('acnum1')?.touched" class="text-danger">
+        <p>invalid accont number</p>
+    </div>
+    
+    <div><label for="Pass">Password</label>
+        <input name="password" type="password" placeholder="Password" formControlName="pswrd1" id="psw1" >
+    </div>
+    <br>
+    <div *ngIf="this.dashbordForm.get('pswrd1')?.errors&&this.dashbordForm.get('pswrd1')?.touched" class="text-danger">
+        <p>invalid password </p>
+    </div>
+    <div>
+        <label for="Amount">withdraw-Amount</label>
+        <input name="Amount" type="text" formControlName="amnt1" id="amt1" placeholder="withdraw Amount" >
+    </div>
+    <br>
+    <div *ngIf="this.dashbordForm.get('amnt1')?.errors&&this.dashbordForm.get('amnt1')?.touched" class="text-danger">
+        <p>invalid withdraw amount</p>
+    </div>
+    <button  type="submit" >withdraw</button>
+</form>
+
+<br>
+<br>
+<br><br>
